@@ -17,7 +17,7 @@ hr {
   max-width: 50px;
 }
 hr.light {
-  border-color: #DEDEDE;
+  border-color: white;
 }
 a {
   -webkit-transition: all 0.35s;
@@ -47,7 +47,7 @@ p {
 }
 .bg-dark {
   background-color: #222222;
-  color: white;
+  color: black;
 }
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
