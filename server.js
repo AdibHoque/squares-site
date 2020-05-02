@@ -17,7 +17,7 @@ app.get("/", function (request, response) {
 });
 
 app.get("/premium", function (request, response) {
-  response.sendPath('https://electropremium.glitch.me/');
+  response.redirect('https://electropremium.glitch.me/');
 });
 
 app.get("/dreams", function (request, response) {
