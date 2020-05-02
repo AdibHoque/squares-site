@@ -16,6 +16,10 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+app.get("/premium", function (request, response) {
+  response.sendPath('https://electropremium.glitch.me/');
+});
+
 app.get("/dreams", function (request, response) {
   response.send(dreams); 
 });
