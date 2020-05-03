@@ -20,6 +20,14 @@ app.get("/premium", function (request, response) {
   response.redirect('https://electropremium.glitch.me/');
 });
 
+app.get("/addbot", function (request, response) {
+  response.redirect('https://discordapp.com/oauth2/authorize?client_id=629323586930212884&permissions=2146827775&redirect_uri=https%3A%2F%2Fdiscord.gg%2FkuWVFpR&response_type=code&scope=guilds.join%20bot')
+});
+
+app.get("/server", function (request, response) {
+  response.redirect('https://discord.gg/kuWVFpR')
+});
+
 app.get("/dreams", function (request, response) {
   response.send(dreams); 
 });
@@ -40,4 +48,4 @@ var dreams = [
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
-});
+})
