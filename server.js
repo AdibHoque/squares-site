@@ -28,8 +28,8 @@ app.get("/server", function (request, response) {
   response.redirect('https://discord.gg/dAggRh9')
 });
 
-app.get("/dreams", function (request, response) {
-  response.send(dreams); 
+app.get("/invite", function (request, response) {
+  response.redirect('https://invite.gg/electro'); 
 });
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
