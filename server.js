@@ -25,7 +25,7 @@ app.get("/addbot", function (request, response) {
 });
 
 app.get("/server", function (request, response) {
-  response.redirect('https://discord.gg/kuWVFpR')
+  response.redirect('https://discord.gg/dAggRh9')
 });
 
 app.get("/dreams", function (request, response) {
