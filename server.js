@@ -17,7 +17,7 @@ app.get("/", function (request, response) {
 });
 
 app.get("/premium", function (request, response) {
-  response.redirect('https://electropremium.glitch.me/');
+  response.sendFile(__dirname + '/views/premium.html');
 });
 
 app.get("/addbot", function (request, response) {
