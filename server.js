@@ -37,9 +37,13 @@ app.get("/invite", function (request, response) {
   response.redirect('https://invite.gg/electro'); 
 });
 app.get("/api/blowjob", function (request, response) {
-  get(options).then(async body =>
-  response.send("test")
+  get(options).then(async body => {
+  response.send(body)
+  })
 });
+app.get("/api/v2/img/:w", function (request, response) {
+  response.send(request.params.w);
+})
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
 app.post("/dreams", function (request, response) {
