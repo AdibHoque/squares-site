@@ -41,9 +41,10 @@ app.get("/api/blowjob", function (request, response) {
   response.send(body)
   })
 });
-app.get("/api/v2/img/:w", function (request, response) {
-  response.send(request.params.w);
+app.get("/api/img/:w/:e", function (request, response) {
+  response.redirect(`https://cdn.nekos.life/`+request.params.w+"/"+request.params.e);
 })
+
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
 app.post("/dreams", function (request, response) {
