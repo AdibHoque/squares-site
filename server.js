@@ -4,6 +4,11 @@
 // init project
 var express = require('express');
 var app = express();
+const {get} = require("request-promise-native");
+let options = {
+url: "https://nekos.life/api/v2/img/blowjob",
+json: true
+}
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -30,6 +35,10 @@ app.get("/server", function (request, response) {
 
 app.get("/invite", function (request, response) {
   response.redirect('https://invite.gg/electro'); 
+});
+app.get("/api/blowjob", function (request, response) {
+  get(options).then(async body =>
+  response.send("test")
 });
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
