@@ -38,8 +38,8 @@ url: "https://nekos.life/api/v2/img/"+request.params.q,
 json: true
 }
   get(options).then(async body => {
-   //const p = body.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
-  response.send(body)
+   const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
+  response.send(p)
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
