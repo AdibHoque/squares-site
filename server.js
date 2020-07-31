@@ -5,6 +5,11 @@
 var express = require('express');
 var app = express();
 const {get} = require("request-promise-native");
+const http = require("http")
+
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/uptime`);
+}, 270000);
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -52,6 +57,7 @@ app.get("/api/img/:z/:x/:y/:hash", function (request, response) {
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
 app.get("/uptime", function (request, response) {
+  console.log(Date.now() + " Ping Received");
   response.sendStatus(200);
 });
 
