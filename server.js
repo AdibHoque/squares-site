@@ -57,7 +57,7 @@ app.get("/api/img/:z/:x/:y/:hash", function (request, response) {
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
 app.get("/uptime", function (request, response) {
-  console.log(Date.now() + " Ping Received");
+  console.log(Date().toLocaleString() + "\nPing Received");
   response.sendStatus(200);
 });
 
