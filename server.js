@@ -45,6 +45,9 @@ json: true
 app.get("/api/img/:w/:e", function (request, response) {
   response.redirect(`https://cdn.nekos.life/`+request.params.w+"/"+request.params.e);
 })
+app.get("/api/img/:z/:x/:y/:hash", function (request, response) {
+  response.redirect(`https://cdn.nekobot.xyz/`+request.params.z+"/"+request.params.x+"/"+request.params.y+"/"+request.params.hash)
+  })
 
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
