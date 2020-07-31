@@ -39,7 +39,7 @@ json: true
 }
   get(options).then(async body => {
    const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
-  response.send(p)
+  response.send(`{"url":"${p}"}`)
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
