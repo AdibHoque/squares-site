@@ -16,6 +16,8 @@ setInterval(() => {
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
