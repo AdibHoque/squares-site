@@ -50,6 +50,16 @@ json: true
   response.json({success:true,url:p})
   })
 });
+app.get("/api/v2/:q", function (request, response) {
+let options = {
+url: "https://nekobot.xyz/api/image?type="+request.params.q,
+json: true
+}
+  get(options).then(async body => {
+   const p = body.message.replace("https://cdn.nekobot.xyz/","https://electro-bot.glitch.me/api/img/")
+  response.json({url:p})
+  })
+});
 app.get("/api/img/:w/:e", function (request, response) {
   response.redirect(`https://cdn.nekos.life/`+request.params.w+"/"+request.params.e);
 })
