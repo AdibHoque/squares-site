@@ -66,6 +66,15 @@ app.get("/api/img/:w/:e", function (request, response) {
 app.get("/api/img/:z/:x/:y/:hash", function (request, response) {
   response.redirect(`https://cdn.nekobot.xyz/`+request.params.z+"/"+request.params.x+"/"+request.params.y+"/"+request.params.hash)
   })
+app.get("/api/pokemon/:n", function (request, response) {
+  let options = {
+url: "https://pokeapi.co/api/v2/pokemon/"+request.params.n,
+json: true
+}
+let ab = []
+get(options).then(async body =>
+response.send(body.moves))
+})
 
 
 // could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
