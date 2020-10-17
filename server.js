@@ -73,7 +73,7 @@ json: true
 }
 let ab = []
 get(options).then(async body =>
-response.send(body.moves[0].version_group_details[0]))
+response.send(body.forms))
 })
 
 
