@@ -13,7 +13,8 @@
     "express": "^4.12.4",
     "font-awesome": "^4.6.3",
     "request": "^2.88.2",
-    "request-promise-native": "^1.0.9"
+    "request-promise-native": "^1.0.9",
+    "pornhub.js": "^0.2.3"
   },
   "engines": {
     "node": "4.4.5"

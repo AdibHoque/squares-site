@@ -6,6 +6,8 @@ var express = require('express');
 var app = express();
 const {get} = require("request-promise-native");
 const http = require("http")
+const ph = require("pornhub.js")
+const pornhub = new ph() 
 
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/uptime`);
@@ -74,6 +76,14 @@ json: true
 let ab = []
 get(options).then(async body =>
 response.send(body.forms))
+})
+app.get("pornhub/:l", function (request, response) {
+  const url = request.params.l
+  pornhub.video(url).then(res => {
+response.send(res.data); 
+    }).catch(() => {
+    response.send("Bad URL")
+  })
 })
 
 
