@@ -8,6 +8,7 @@ const {get} = require("request-promise-native");
 const http = require("http")
 const ph = require("pornhub.js")
 const pornhub = new ph() 
+const Canvas = require("canvas");
 
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/uptime`);
@@ -47,9 +48,14 @@ url: "https://nekos.life/api/v2/img/"+request.params.q,
 json: true
 }
   get(options).then(async body => {
-   const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
-  response.header("Content-Type",'application/json');
-  response.json({success:true,url:p})
+   //const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
+  //response.header("Content-Type",'application/json');
+  //response.json({success:true,url:p})
+    const canvas = Canvas.createCanvas(1080,720);
+    const ctx = canvas.getContext("2d");
+    let background = await Canvas.loadImage(body.url)
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    response.sendFile(canvas.toBuffer())
   })
 });
 app.get("/api/v2/:q", function (request, response) {
