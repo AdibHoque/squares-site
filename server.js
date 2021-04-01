@@ -56,7 +56,7 @@ json: true
     let background = await Canvas.loadImage(body.url)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     response.sendFile(canvas.toBuffer())*/
-    response.send(`<a href="${process.env.PROJEC_URL.replace('undefined',request.params.q)}">
+    response.send(`<a href="https://electro-bot.glitch.me/api/${request.params.q}">
     <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
   </a> 
   <img src="${body.url}" align="center">`)
