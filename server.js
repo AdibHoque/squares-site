@@ -56,7 +56,10 @@ json: true
     let background = await Canvas.loadImage(body.url)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     response.sendFile(canvas.toBuffer())*/
-    response.send(`<img src="${body.url}" align="center">`)
+    response.send(`<a href="${process.env.PROJEC_URL.replace('undefined',request.params.q)}">
+    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
+  </a> 
+  <img src="${body.url}" align="center">`)
   })
 });
 app.get("/api/v2/:q", function (request, response) {
