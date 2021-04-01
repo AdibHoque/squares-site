@@ -56,7 +56,7 @@ json: true
     let background = await Canvas.loadImage(body.url)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     response.sendFile(canvas.toBuffer())*/
-    response.send('<img src="https://cdn.discordapp.com/attachments/656517276832366595/661972761698369536/ELECTRO_WEB_HEADER.png" align="center">')
+    response.send(`<img src="${body.url}" align="center">`)
   })
 });
 app.get("/api/v2/:q", function (request, response) {
