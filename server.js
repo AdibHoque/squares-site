@@ -77,7 +77,7 @@ json: true
    <a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
     <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
   </a>
-  <img src="${body.message}", align="center">`) 
+  <img src="${body.message}">`) 
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
