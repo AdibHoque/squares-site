@@ -62,20 +62,22 @@ json: true
   <img src="${body.url}" align="center">`)
   })
 });
-app.get("/api/nsfw/:q", function (request, response) {
-  let Param = request.params.q
+app.get("/nsfw/:q", function (request, response) {
+ /*let Param = request.params.q
   if(request.params.q == "random") {
     const r = ['gonewild','thigh','pussy','pussy','ass','4k','pgif']
   Param = r[Math.round(Math.random() * (r.length - 1))];
-  }
+  }*/
 let options = {
 url: "https://nekobot.xyz/api/image?type="+request.params.q,
 json: true
 }
   get(options).then(async body => {
-   response.send(`<a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
+   response.send(`<p>${request.params.q}</p>
+   <a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
     <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
-  </a>`) 
+  </a>
+  <img src="${body.message}", align="center">`) 
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
