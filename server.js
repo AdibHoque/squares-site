@@ -42,7 +42,7 @@ app.get("/server", function (request, response) {
 app.get("/invite", function (request, response) {
   response.redirect('https://invite.gg/electro'); 
 });
-app.get("/api/:q", function (request, response) {
+app.get("/hentai/:q", function (request, response) {
 let options = {
 url: "https://nekos.life/api/v2/img/"+request.params.q,
 json: true
@@ -56,20 +56,26 @@ json: true
     let background = await Canvas.loadImage(body.url)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     response.sendFile(canvas.toBuffer())*/
-    response.send(`<a href="https://electro-bot.glitch.me/api/${request.params.q}">
+    response.send(`<a href="https://electro-bot.glitch.me/hentai/${request.params.q}">
     <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
   </a> 
   <img src="${body.url}" align="center">`)
   })
 });
-app.get("/api/v2/:q", function (request, response) {
+app.get("/api/nsfw/:q", function (request, response) {
+  let Param = request.params.q
+  if(request.params.q == "random") {
+    const r = ['gonewild','thigh','pussy','pussy','ass','4k','pgif']
+  Param = r[Math.round(Math.random() * (r.length - 1))];
+  }
 let options = {
 url: "https://nekobot.xyz/api/image?type="+request.params.q,
 json: true
 }
   get(options).then(async body => {
-   const p = body.message.replace("https://cdn.nekobot.xyz/","https://electro-bot.glitch.me/api/img/")
-  response.json({url:p})
+   response.send(`<a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
+    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
+  </a>`) 
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
