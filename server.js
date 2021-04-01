@@ -51,11 +51,12 @@ json: true
    //const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
   //response.header("Content-Type",'application/json');
   //response.json({success:true,url:p})
-    const canvas = Canvas.createCanvas(1080,720);
+    /*const canvas = Canvas.createCanvas(1080,720);
     const ctx = canvas.getContext("2d");
     let background = await Canvas.loadImage(body.url)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    response.sendFile(canvas.toBuffer())
+    response.sendFile(canvas.toBuffer())*/
+    response.send('<img src="https://cdn.discordapp.com/attachments/656517276832366595/661972761698369536/ELECTRO_WEB_HEADER.png" align="center">')
   })
 });
 app.get("/api/v2/:q", function (request, response) {
