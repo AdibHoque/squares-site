@@ -75,9 +75,9 @@ json: true
   get(options).then(async body => {
    response.send(`<p>${request.params.q}</p>
    <a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
-    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge" align="left">
   </a>
-  <img src="${body.message}">`) 
+  <img src="${body.message}" align="center">`) 
   })
 });
 app.get("/api/img/:w/:e", function (request, response) {
