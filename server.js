@@ -5,9 +5,7 @@
 var express = require('express');
 var app = express();
 const {get} = require("request-promise-native");
-const http = require("http")
-const ph = require("pornhub.js")
-const pornhub = new ph() 
+const http = require("http") 
 const Canvas = require("canvas");
 
 setInterval(() => {
@@ -42,50 +40,7 @@ app.get("/server", function (request, response) {
 app.get("/invite", function (request, response) {
   response.redirect('https://invite.gg/electro'); 
 });
-app.get("/hentai/:q", function (request, response) {
-let options = {
-url: "https://nekos.life/api/v2/img/"+request.params.q,
-json: true
-}
-  get(options).then(async body => {
-   //const p = body.url.replace("https://cdn.nekos.life/","https://electro-bot.glitch.me/api/img/")
-  //response.header("Content-Type",'application/json');
-  //response.json({success:true,url:p})
-    /*const canvas = Canvas.createCanvas(1080,720);
-    const ctx = canvas.getContext("2d");
-    let background = await Canvas.loadImage(body.url)
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-    response.sendFile(canvas.toBuffer())*/
-    response.send(`<a href="https://electro-bot.glitch.me/hentai/${request.params.q}">
-    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge">
-  </a> 
-  <img src="${body.url}" align="center">`)
-  })
-});
-app.get("/nsfw/:q", function (request, response) {
- /*let Param = request.params.q
-  if(request.params.q == "random") {
-    const r = ['gonewild','thigh','pussy','pussy','ass','4k','pgif']
-  Param = r[Math.round(Math.random() * (r.length - 1))];
-  }*/
-let options = {
-url: "https://nekobot.xyz/api/image?type="+request.params.q,
-json: true
-}
-  get(options).then(async body => {
-   response.send(`<p>${request.params.q}</p>
-   <a href="https://electro-bot.glitch.me/nsfw/${request.params.q}">
-    <img src="https://img.shields.io/badge/Switch-yellow.svg?style=for-the-badge" align="left">
-  </a>
-  <img src="${body.message}" align="center">`) 
-  })
-});
-app.get("/api/img/:w/:e", function (request, response) {
-  response.redirect(`https://cdn.nekos.life/`+request.params.w+"/"+request.params.e);
-})
-app.get("/api/img/:z/:x/:y/:hash", function (request, response) {
-  response.redirect(`https://cdn.nekobot.xyz/`+request.params.z+"/"+request.params.x+"/"+request.params.y+"/"+request.params.hash)
-  })
+
 app.get("/api/pokemon/:n", function (request, response) {
   let options = {
 url: "https://pokeapi.co/api/v2/pokemon/"+request.params.n,
@@ -94,14 +49,6 @@ json: true
 let ab = []
 get(options).then(async body =>
 response.send(body.forms))
-})
-app.get("pornhub/:l", function (request, response) {
-  const url = request.params.l
-  pornhub.video(url).then(res => {
-response.send(res.data); 
-    }).catch(() => {
-    response.send("Bad URL")
-  })
 })
 
 
