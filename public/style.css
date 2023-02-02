@@ -19,6 +19,11 @@ hr {
 hr.light {
   border-color: white;
 }
+hr.full{
+  border-color: #FFBF00;
+  border-width: 3px;
+  max-width: 1200px;
+}
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
