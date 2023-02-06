@@ -49,10 +49,6 @@ td.usage {
   .styled-table {
     width: 500px;
   }
-  .hed {
-    align: center;
-  }
-
 }
 hr {
   border-color: #FFBF00;
@@ -78,15 +74,17 @@ h2 {
     color: white;
    margin-top: 0;
       }
-      hed {
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
+ hed {
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   position: absolute;
+   text-align: center;
       }
     </style>
 </head>
 <body background-color="#111111">
-  <div align="center">
+  <div class="hed">
     <h2>
       ELECTRON
     </h2>
