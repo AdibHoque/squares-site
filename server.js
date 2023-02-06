@@ -28,6 +28,9 @@ app.get("/", function (request, response) {
 app.get("/premium", function (request, response) {
   response.sendFile(__dirname + '/views/premium.html');
 });
+app.get("/commands", function (request, response) {
+  response.sendFile(__dirname + '/views/commands.html');
+});
 
 app.get("/addbot", function (request, response) {
   response.redirect('https://discordapp.com/oauth2/authorize?client_id=629323586930212884&permissions=2146827775&redirect_uri=https%3A%2F%2Fdiscord.gg%2FkuWVFpR&response_type=code&scope=guilds.join%20bot')
