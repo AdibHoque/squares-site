@@ -1,0 +1,280 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+    background-color: #111111;
+  }
+.styled-table {
+    border-collapse: collapse;
+    margin: 30px 20px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 900px;
+    background-color: #191a1f;
+    border: 1px solid #252b35;   
+    border-radius: 5px;
+}
+.styled-table th {
+    background-color: #191a1f;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #252b35;   
+    border-radius: 5px;
+    padding: 15px;
+}
+.styled-table td {
+    color: #ffffff;
+    text-align: left;
+    background-color: #18191a;
+    border: 1px solid #252b35;   
+    border-radius: 3px;
+    padding: 15px;
+}
+td.command {
+    color: #ffbf00;
+}
+td.usage {
+    color: #7a7a7a;
+}
+.styled-table caption {
+    color:#ffbf00;
+    font-weight: bolder;
+    padding: 5px;
+}
+    </style>
+</head>
+<body background-color="#111111">
+    <table class="styled-table">
+        <caption>UTILITY COMMANDS</caption>
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="command">avatar</td>
+                <td>Enlarge user Avatar!</td>
+                <td class="usage">/avatar &#91;@user&#93;</td>
+            </tr>
+            <tr>
+                <td class="command">botinfo</td>
+                <td>Information about the Bot!</td>
+                <td class="usage">/botinfo</td>
+            </tr>
+            <tr>
+                <td class="command">color</td>
+                <td>Get visual color image from an HEX code.</td>
+                <td class="usage">/color &lt;HEX code&gt;</td>
+            </tr>
+            <tr>
+                <td class="command">define</td>
+                <td>Get word definition from Urban Dictionary</td>
+                <td class="usage">/define &lt;word&gt;</td>
+            </tr>
+            <tr>
+                <td class="command">math</td>
+                <td>Evaluate mathematical inputs.</td>
+                <td class="usage">/math &lt;input&gt;</td>
+            </tr>
+            <tr>
+                <td class="command">ping</td>
+                <td>Check bot ping latency!</td>
+                <td class="usage">/ping</td>
+            </tr>
+            <tr>
+                <td class="command">roleinfo</td>
+                <td>Get information about a role.</td>
+                <td class="usage">/roleinfo &lt;role&gt;</td>
+            </tr>
+            <tr>
+                <td class="command">serverinfo</td>
+                <td>Get information about the server.</td>
+                <td class="usage">/serverinfo</td>
+            </tr>
+            <tr>
+                <td class="command">userinfo</td>
+                <td>Get information about a user.</td>
+                <td class="usage">/userinfo &lt;user&gt;</td>
+            </tr>
+            <tr>
+                <td class="command">winratecalc</td>
+                <td>Calculate how many wins you need for reaching a certain Winrate.</td>
+                <td class="usage">/winratecalc &lt;current winrate&gt; &lt;total matches&gt; &lt;desired winrate&gt;</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="styled-table">
+        <caption>ENTERTAINMENT COMMANDS</caption>
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="command">tictactoe</td>
+                <td>Play a game of TicTacToe</td>
+                <td class="usage">/tictactoe &#91;user&#93;</td>
+                </tr>
+                <tr>
+                <td class="command">wordchain</td>
+                <td>Play a game of wordchain with upto 10 people.</td>
+                <td class="usage">/wordchain</td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="styled-table">
+        <caption>MODERATION COMMANDS</caption>
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Required Permission</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="command">ban</td>
+                <td>Ban a member from the server</td>
+                <td class="usage">BAN_MEMBERS</td>
+                <td class="usage">/ban &lt;member ID or @member&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">clearlogs</td>
+                <td>Mass delete a members logs, oldest to newest sequence.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/clearlogs &lt;member&gt; &#91;Amount&#93;</td>
+                </tr>
+                <tr>
+                <td class="command">config</td>
+                <td>Assign or change channels for certain tasks.</td>
+                <td class="usage">MANAGE_CHANNELS</td>
+                <td class="usage">/config &lt;option&gt; &lt;value&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">kick</td>
+                <td>Kick a member from the server</td>
+                <td class="usage">KICK_MEMBERS</td>
+                <td class="usage">/kick &lt;member ID or @member&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">loginfo</td>
+                <td>Log information with the attachment evidence, if any.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/loginfo &lt;Log ID&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">logs</td>
+                <td>See Moderation logs of a member.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/logs &lt;@member or member ID&gt; &#91;Filter&#93;</td>
+                </tr>
+                <tr>
+                <td class="command">mute</td>
+                <td>Mute a member.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/mute &lt;member ID or @member&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">nickname</td>
+                <td>Change a members nickname.</td>
+                <td class="usage">MANAGE_NICKNAMES</td>
+                <td class="usage">/nickname &lt;member ID or @member&gt; &lt;nickname&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">purge</td>
+                <td>Bulk delete messages of a channel.</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/purge &lt;amount&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">resetnick</td>
+                <td>Reset a members nickname.</td>
+                <td class="usage">MANAGE_NICKNAMES</td>
+                <td class="usage">/resetnick &lt;member ID or @member&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">role</td>
+                <td>Toggle add or remove role from a Member.</td>
+                <td class="usage">MANAGE_ROLES</td>
+                <td class="usage">/role &lt;member ID or @member&gt; &lt;role&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">unban</td>
+                <td>Unban a member.</td>
+                <td class="usage">BAN_MEMBERS</td>
+                <td class="usage">/unban &lt;member ID&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">unmute</td>
+                <td>Unmute a previously muted member.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/unmute &lt;member ID or @member&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">warn</td>
+                <td>Warn a member for rules violation.</td>
+                <td class="usage">MODERATE_MEMBERS</td>
+                <td class="usage">/warn &lt;member ID or @member&gt; &lt;Reason&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">embed</td>
+                <td>Create a custom embed</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/embed &lt;title&gt; &#91;author&#93; &#91;description&#93; &#91;thumbnail&#93; &#91;image URL&#93;</td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="styled-table">
+        <caption>GIVEAWAY COMMANDS</caption>
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Required Permission</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="command">gdelete</td>
+                <td>Delete an ongoing Giveaway</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/gdelete &lt;Giveaway Message ID&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">gedit</td>
+                <td>Edit data of an ongoing Giveaway</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/gedit &lt;Giveaway Message ID&gt; &lt;Time to add or dedcut, use - to deduct (-1d)&gt; &lt;Winner Count&gt; &lt;Prize&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">gend</td>
+                <td>Force end an ongoing Giveaway</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/gend &lt;Giveaway Message ID&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">greroll</td>
+                <td>Reroll an ended Giveaway for new winners.</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/greroll &lt;Giveaway Message ID&gt;</td>
+                </tr>
+                <tr>
+                <td class="command">gstart</td>
+                <td>Start a Giveaway.</td>
+                <td class="usage">MANAGE_MESSAGES</td>
+                <td class="usage">/gstart &lt;Duration e.g. 1d 6h&gt; &lt;Winner Count&gt; &lt;Prize&gt; &#91;Giveaway Channel&#93;</td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>
